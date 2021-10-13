@@ -12,13 +12,13 @@ const managerQuestions = [
         type: 'input',
         message: 'What is the team manager\'s name?',
         name: 'managerName',
-        default: 'John Doe'
+        default: 'Joe Doe'
     },
     {
         type: 'input',
         message: 'What is the team manager\'s employee id #?',
         name: 'managerID',
-        default: 'format: 12-3456'
+        default: 'format: 123456'
     },
     {
         type: 'input',
@@ -39,13 +39,13 @@ const engineerQuestions = [
         type: 'input',
         message: 'What is your engineer\'s name?',
         name: 'engineerName',
-        default: 'Jake Doe'
+        default: 'Moe Doe'
     },
     {
         type: 'input',
         message: 'What is your engineer\'s employee id #?',
         name: 'engineerID',
-        default: 'format: 12-3456'
+        default: 'format: 123456'
     },
     {
         type: 'input',
@@ -57,22 +57,22 @@ const engineerQuestions = [
         type: 'input',
         message: 'What is your engineer\'s GitHub username?',
         name: 'engineerGitHub',
-        default: 'jakedoe'
+        default: 'moedoe.git'
     }
 ];
 
 const internQuestions = [
     {
         type: 'input',
-        message: 'What is your interns name?',
+        message: 'What is your intern\'s name?',
         name: 'internName',
-        default: 'Jane Doe'
+        default: 'Roe Doe'
     },
     {
         type: 'input',
-        message: 'What is your interns employee id #?',
+        message: 'What is your intern\'s employee id #?',
         name: 'internID',
-        default: 'format: 12-3456'
+        default: 'format: 123456'
     },
     {
         type: 'input',
@@ -84,7 +84,7 @@ const internQuestions = [
         type: 'input',
         message: 'What is your intern\'s school?',
         name: 'internSchool',
-        default: 'UNC Chapel Hill'
+        default: 'UNC'
     }
 ];
 
@@ -122,7 +122,7 @@ async function nextEmployee(answers) {
     } else if (answers === 'Intern') {
         const { internName, internID, internEmail, internSchool } = await prompt(internQuestions);
         const addNewEmployee = await prompt(addAnotherEmployee);
-        const newIntern = new Engineer(internName, internID, internEmail, internSchool);
+        const newIntern = new Intern(internName, internID, internEmail, internSchool);
         employees.push(newIntern);
         nextEmployee(addNewEmployee.employeeType);
         return

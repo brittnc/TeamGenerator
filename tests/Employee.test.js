@@ -13,7 +13,7 @@ test('id', () => {
 });
 
 test('email', () => {
-    const employeeEmail = 'john@gmail.com';
+    const employeeEmail = 'john@email.com';
     const employee = new Employee(employeeEmail);
     expect(employee.email).toBe(employeeEmail);
 });
